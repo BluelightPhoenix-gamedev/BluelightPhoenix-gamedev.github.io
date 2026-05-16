@@ -279,11 +279,11 @@
   .art-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 200px;  /* base row height */
     gap: 10px;
   }
 
   .art-cell {
-    aspect-ratio: 1;
     background: var(--surface);
     border-radius: 10px;
     border: 1px solid var(--border);
@@ -295,6 +295,14 @@
     overflow: hidden;
     transition: border-color 0.2s, transform 0.2s;
     cursor: pointer;
+  }
+
+  .art-cell img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0;
   }
 
   .art-cell:hover { border-color: var(--border-hover); transform: scale(1.02); }
@@ -309,10 +317,16 @@
     color: var(--muted);
     opacity: 0;
     transition: opacity 0.2s;
+    z-index: 1;
   }
 
   .art-cell:hover .art-label { opacity: 1; }
-  .art-cell.wide { grid-column: span 2; aspect-ratio: 2/1; }
+
+  /* spans 2 columns — landscape images */
+  .art-cell.wide { grid-column: span 2; }
+
+  /* spans 2 rows — portrait images */
+  .art-cell.tall { grid-row: span 2; }
 
   /* ── SKILLS ── */
   .skills-grid {
@@ -403,6 +417,7 @@
     .game-thumb { min-height: 120px; }
     .art-grid { grid-template-columns: repeat(2, 1fr); }
     .art-cell.wide { grid-column: span 2; }
+    .art-cell.tall { grid-row: span 2; }
     .skills-grid { grid-template-columns: 1fr; }
     .about-block { grid-template-columns: 1fr; }
   }
@@ -534,51 +549,59 @@
   </section>
 
   <!-- ART -->
-<section>
-  <div class="section-header">
-    <span class="section-label">02</span>
-    <h2>Art</h2>
-  </div>
-
-  <div class="art-grid">
-
-    <div class="art-cell wide">
-      <img src="Isabelle and Lyon.JPEG" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      <span class="art-label">Isabelle and Lyon</span>
+  <section>
+    <div class="section-header">
+      <span class="section-label">02</span>
+      <h2>Art</h2>
     </div>
 
-    <div class="art-cell">
-      <img src="Edgar Burns.PNG" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      <span class="art-label">Edgar Burns</span>
-    </div>
+    <!--
+      Layout (3-column grid, each row 200px tall):
 
-    <div class="art-cell">
-      <img src="Isabelle glasses off.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      <span class="art-label">Isabelle</span>
-    </div>
+      [ Isabelle and Lyon — wide ] [ isabelle leaves Rhodya — tall ]
+      [ Edgar Burns ]  [ Isabelle ] [ isabelle leaves Rhodya — tall ]
+      [ I'm sorry ] [ Grey ref ] [ Shadow Penance cover — tall ]
+      [            —            ] [ Shadow Penance cover — tall ]
+    -->
+    <div class="art-grid">
 
-    <div class="art-cell">
-      <img src="I'm sorry.JPEG" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      <span class="art-label">I'm sorry</span>
-    </div>
+      <div class="art-cell wide">
+        <img src="Isabelle and Lyon.JPEG" alt="Isabelle and Lyon">
+        <span class="art-label">Isabelle and Lyon</span>
+      </div>
 
-    <div class="art-cell">
-      <img src="is this a Grey reference.PNG" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      <span class="art-label">Is this a Grey reference</span>
-    </div>
+      <div class="art-cell tall" style="grid-row: span 2;">
+        <img src="isabelle leaves Rhodya.JPEG" alt="Isabelle leaves Rhodya">
+        <span class="art-label">Isabelle leaves Rhodya</span>
+      </div>
 
-    <div class="art-cell wide">
-      <img src="isabelle leaves Rhodya.JPEG" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      <span class="art-label">Isabelle leaves Rhodya</span>
-    </div>
+      <div class="art-cell">
+        <img src="Edgar Burns.PNG" alt="Edgar Burns">
+        <span class="art-label">Edgar Burns</span>
+      </div>
 
-    <div class="art-cell wide">
-      <img src="Shadow Penance cover.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-      <span class="art-label">Shadow's Penance — cover art</span>
-    </div>
+      <div class="art-cell">
+        <img src="Isabelle glasses off.png" alt="Isabelle">
+        <span class="art-label">Isabelle</span>
+      </div>
 
-  </div>
-</section>
+      <div class="art-cell">
+        <img src="I'm sorry.JPEG" alt="I'm sorry">
+        <span class="art-label">I'm sorry</span>
+      </div>
+
+      <div class="art-cell">
+        <img src="is this a Grey reference.PNG" alt="Is this a Grey reference">
+        <span class="art-label">Is this a Grey reference??</span>
+      </div>
+
+      <div class="art-cell tall" style="grid-row: span 2;">
+        <img src="Shadow Penance cover.png" alt="Shadow's Penance cover art">
+        <span class="art-label">Shadow's Penance — cover art</span>
+      </div>
+
+    </div>
+  </section>
 
   <!-- SKILLS -->
   <section>
