@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Portfolio — [Your Name]</title>
+<title>Bluelight Phoenix — Game Developer & Digital Artist</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0d0d0f;
-    --surface: #16161a;
-    --surface2: #1e1e24;
-    --border: rgba(255,255,255,0.07);
-    --border-hover: rgba(255,255,255,0.15);
-    --accent: #c8f564;
+    --bg: #010308;
+    --surface: #050a18;
+    --surface2: #09112a;
+    --border: rgba(80,140,255,0.1);
+    --border-hover: rgba(80,140,255,0.28);
+    --accent: #7db8ff;
     --accent2: #7b61ff;
-    --text: #f0efe8;
-    --muted: #7a7a8a;
-    --tag-bg: rgba(200,245,100,0.08);
-    --tag-color: #c8f564;
+    --text: #f7feff;
+    --muted: #6a7499;
+    --tag-bg: rgba(125,184,255,0.08);
+    --tag-color: #7db8ff;
+    --btn-bg: #0a1530;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -32,7 +33,6 @@
     min-height: 100vh;
   }
 
-  /* noise overlay */
   body::before {
     content: '';
     position: fixed;
@@ -104,7 +104,7 @@
     border-radius: 100px;
     background: var(--tag-bg);
     color: var(--tag-color);
-    border: 1px solid rgba(200,245,100,0.2);
+    border: 1px solid rgba(125,184,255,0.25);
     letter-spacing: 0.04em;
   }
 
@@ -128,9 +128,10 @@
     text-decoration: none;
     color: var(--muted);
     border: 1px solid var(--border);
+    background: var(--btn-bg);
     padding: 8px 14px;
     border-radius: 6px;
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
     white-space: nowrap;
     display: flex;
     align-items: center;
@@ -186,8 +187,8 @@
     transform: translateY(-2px);
   }
 
-  .game-card.featured { border-color: rgba(200,245,100,0.25); }
-  .game-card.featured:hover { border-color: rgba(200,245,100,0.5); }
+  .game-card.featured { border-color: rgba(125,184,255,0.25); }
+  .game-card.featured:hover { border-color: rgba(125,184,255,0.55); }
 
   .game-thumb {
     background: var(--surface2);
@@ -204,7 +205,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(200,245,100,0.05), transparent 60%);
+    background: linear-gradient(135deg, rgba(125,184,255,0.07), transparent 60%);
   }
 
   .featured-badge {
@@ -216,7 +217,7 @@
     letter-spacing: 0.1em;
     text-transform: uppercase;
     background: var(--accent);
-    color: #0d0d0f;
+    color: #020713;
     padding: 3px 8px;
     border-radius: 4px;
     font-weight: 500;
@@ -292,7 +293,7 @@
     position: absolute;
     bottom: 0;
     left: 0; right: 0;
-    background: linear-gradient(transparent, rgba(13,13,15,0.9));
+    background: linear-gradient(transparent, rgba(1,3,8,0.94));
     padding: 1rem 0.75rem 0.75rem;
     font-size: 11px;
     color: var(--muted);
@@ -301,7 +302,6 @@
   }
 
   .art-cell:hover .art-label { opacity: 1; }
-
   .art-cell.wide { grid-column: span 2; aspect-ratio: 2/1; }
 
   /* ── SKILLS ── */
@@ -357,9 +357,10 @@
     text-decoration: none;
     color: var(--muted);
     border: 1px solid var(--border);
+    background: var(--btn-bg);
     padding: 8px 14px;
     border-radius: 6px;
-    transition: color 0.2s, border-color 0.2s;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
     display: flex;
     align-items: center;
     gap: 8px;
@@ -405,14 +406,15 @@
   <header>
     <div>
       <p class="header-tag">// portfolio — game developer & digital artist</p>
-      <h1>[Your<br><span>Name]</span></h1>
+      <h1>Bluelight<br><span>Phoenix</span></h1>
       <p class="header-bio">
-        Hobby game developer with [X] years of experience building games from scratch —
-        design, code, and art. Recently expanded into Unity & C#. Based in Greece.
+        Hobby game developer with years of experience building games from scratch —
+        design, code, and art. Diving deep into Unity & C#. Based in Greece.
       </p>
       <div class="skill-pills">
         <span class="pill">Unity</span>
         <span class="pill">C#</span>
+        <span class="pill">RPG Maker</span>
         <span class="pill">Game Design</span>
         <span class="pill alt">Digital Art</span>
         <span class="pill alt">2D Animation</span>
@@ -421,14 +423,17 @@
     </div>
     <div class="header-links">
       <a href="#" class="link-btn">
+        <!-- Replace # with your GitHub URL -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         GitHub
       </a>
       <a href="#" class="link-btn">
+        <!-- Replace # with your LinkedIn URL -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
       <a href="mailto:you@email.com" class="link-btn">
+        <!-- Replace with your real email -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email me
       </a>
@@ -444,71 +449,77 @@
 
     <div class="games">
 
-      <!-- Featured game -->
+      <!-- FEATURED GAME — fill this in first, it's your strongest work -->
       <a href="#" class="game-card featured">
+        <!-- Replace # with your Itch.io game page URL -->
         <div class="game-thumb">
           <span class="featured-badge">Featured</span>
           🎮
-          <!-- Replace emoji with: <img src="screenshot.png" style="width:100%;height:100%;object-fit:cover;"> -->
+          <!-- To add a screenshot:
+               1. Upload the image to your GitHub repo
+               2. Replace the emoji above with:
+               <img src="screenshot.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+          -->
         </div>
         <div class="game-info">
           <div>
-            <p class="game-meta">Unity · C# · 2026</p>
+            <p class="game-meta">Unity · C# · 2025–2026</p>
             <p class="game-title">[Your Game Title]</p>
             <p class="game-desc">
               A [genre] game where the player [core loop in one sentence].
-              Built solo over [X months], with all code, art, and sound design done by me.
+              Built solo, with all code, art, and sound design done by me.
             </p>
             <p class="game-highlight">
-              "The trickiest part was [specific challenge] — I solved it by [brief approach]. This taught me a lot about [skill/concept]."
+              "The trickiest part was [specific challenge] — I solved it by [brief approach].
+              This taught me a lot about [skill or concept]."
             </p>
           </div>
           <div class="game-tags">
             <span class="tag">Playable on Itch</span>
             <span class="tag">Source on GitHub</span>
-            <span class="tag">2D platformer</span>
+            <span class="tag">[Genre]</span>
             <span class="tag">Original art</span>
           </div>
         </div>
       </a>
 
-      <!-- Game 2 -->
+      <!-- GAME 2 — an older hobby game you're proud of -->
       <a href="#" class="game-card">
         <div class="game-thumb">🕹️</div>
         <div class="game-info">
           <div>
-            <p class="game-meta">[Engine] · [Year]</p>
-            <p class="game-title">[Second Game Title]</p>
+            <p class="game-meta">RPG Maker 2003 · [Year]</p>
+            <p class="game-title">[Game Title]</p>
             <p class="game-desc">
               [Short description of the game and what makes it interesting.]
-              Made in [timeframe] for [jam / personal project].
+              A passion project made for [friends / a jam / personal enjoyment].
             </p>
             <p class="game-highlight">
-              "Highlight of this project: [a mechanic, technical trick, or design lesson]."
+              "Highlight: [a mechanic, a story moment, or a design lesson from this one]."
             </p>
           </div>
           <div class="game-tags">
-            <span class="tag">Puzzle</span>
-            <span class="tag">Original soundtrack</span>
-            <span class="tag">Jam entry</span>
+            <span class="tag">RPG</span>
+            <span class="tag">Original story</span>
+            <span class="tag">Original art</span>
           </div>
         </div>
       </a>
 
-      <!-- Game 3 -->
+      <!-- GAME 3 — another project, or a game jam entry -->
       <a href="#" class="game-card">
         <div class="game-thumb">🌌</div>
         <div class="game-info">
           <div>
             <p class="game-meta">[Engine] · [Year]</p>
-            <p class="game-title">[Third Game Title]</p>
+            <p class="game-title">[Game Title]</p>
             <p class="game-desc">
-              [Short description. Focus on what's unique about it — mechanic, art style, story hook.]
+              [Short description. Focus on what's unique — mechanic, art style, or story hook.]
             </p>
           </div>
           <div class="game-tags">
-            <span class="tag">RPG</span>
-            <span class="tag">Pixel art</span>
+            <span class="tag">[Genre]</span>
+            <span class="tag">Solo dev</span>
           </div>
         </div>
       </a>
@@ -524,11 +535,20 @@
     </div>
 
     <div class="art-grid">
-      <!-- Replace the emoji + background with actual <img> tags -->
+      <!--
+        HOW TO ADD YOUR ART:
+        Replace the emoji and gradient background on each cell like this:
+
+        <div class="art-cell wide">
+          <img src="art1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
+          <span class="art-label">Environment concept — Game Name</span>
+        </div>
+
+        Upload your art images to the GitHub repo first, then reference them by filename.
+      -->
       <div class="art-cell wide" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
         🎨
         <span class="art-label">Environment concept — [Game Name]</span>
-        <!-- <img src="art1.jpg" style="width:100%;height:100%;object-fit:cover;"> -->
       </div>
       <div class="art-cell" style="background: linear-gradient(135deg, #1e1e2e, #2d1b69);">
         🧝
@@ -563,34 +583,37 @@
           <span class="skill-item">Unity</span>
           <span class="skill-item">C#</span>
           <span class="skill-item">Git</span>
-          <span class="skill-item">[Other engine / tool]</span>
+          <span class="skill-item">RPG Maker scripting</span>
         </div>
       </div>
       <div class="skill-group">
         <p class="skill-group-name">Art & Design</p>
         <div class="skill-list">
-          <span class="skill-item">Procreate</span>
-          <span class="skill-item">Photoshop</span>
-          <span class="skill-item">Aseprite</span>
-          <span class="skill-item">UI Design</span>
-          <span class="skill-item">Character Design</span>
+          <span class="skill-item">Digital illustration</span>
+          <span class="skill-item">Character design</span>
+          <span class="skill-item">Environment art</span>
+          <span class="skill-item">UI graphics</span>
+          <!-- Add your tools: Procreate, Photoshop, Aseprite, Clip Studio, etc. -->
+          <span class="skill-item">[Your art tool]</span>
         </div>
       </div>
       <div class="skill-group">
         <p class="skill-group-name">Game Dev</p>
         <div class="skill-list">
-          <span class="skill-item">Game Design</span>
-          <span class="skill-item">Level Design</span>
+          <span class="skill-item">Game design</span>
+          <span class="skill-item">Level design</span>
+          <span class="skill-item">Narrative design</span>
           <span class="skill-item">Prototyping</span>
           <span class="skill-item">Playtesting</span>
         </div>
       </div>
       <div class="skill-group">
-        <p class="skill-group-name">Soft Skills</p>
+        <p class="skill-group-name">Strengths</p>
         <div class="skill-list">
           <span class="skill-item">Self-directed</span>
           <span class="skill-item">Solo shipping</span>
-          <span class="skill-item">Rapid iteration</span>
+          <span class="skill-item">Fast learner</span>
+          <span class="skill-item">Full-stack game dev</span>
         </div>
       </div>
     </div>
@@ -606,37 +629,46 @@
     <div class="about-block">
       <div class="about-text">
         <p>
-          I've been making games as a hobby for [X] years — building everything myself,
-          from the design and code to the art and sound. Most of my work has been
-          [engines / genres you've used], and over the last few months I've been
-          diving deep into Unity and C#.
+          I've been making games as a hobby since high school. I've always been the quiet kid in the
+          back of the class, staring out of the window, lost in my imagination. I've always had a
+          deep love for video games and I wanted to create my own. I started with Game Maker, making
+          small fun games for my friends, then got into RPG Maker. Most of my early work was in
+          RPG Maker 2003, but over the last two years I've been diving deep into Unity and C#.
         </p>
         <p>
-          I'm also a digital artist — I create character designs, environments,
-          and UI graphics, mostly for my own games but also as standalone pieces.
-          Having both skills lets me prototype and ship a complete game experience
-          without needing a full team.
+          I've always been an artist and a game designer, but I also got into coding because I want
+          to be able to make anything I can imagine. My background helped me pick up C# quickly,
+          and having both art and code skills means I can prototype and ship a complete game
+          experience without needing a full team.
         </p>
         <p>
-          I'm currently looking for [junior game developer / technical artist / designer]
-          roles where I can contribute to a team and keep growing fast.
+          I'm also a digital artist — I create character designs, environments, and UI graphics,
+          mostly for my own games but also as standalone pieces.
+        </p>
+        <p>
+          I'm open to game developer roles where I can contribute to a team and keep growing fast.
         </p>
       </div>
 
       <div class="contact-list">
         <a href="mailto:you@email.com" class="contact-link">
+          <!-- Replace with your real email -->
           <span class="contact-dot"></span> Email
         </a>
         <a href="#" class="contact-link">
+          <!-- Replace # with your GitHub URL -->
           <span class="contact-dot"></span> GitHub
         </a>
         <a href="#" class="contact-link">
+          <!-- Replace # with your LinkedIn URL -->
           <span class="contact-dot"></span> LinkedIn
         </a>
         <a href="#" class="contact-link">
+          <!-- Replace # with your Itch.io URL -->
           <span class="contact-dot"></span> Itch.io
         </a>
         <a href="#" class="contact-link">
+          <!-- Replace # with a link to your CV PDF, once uploaded to the repo -->
           <span class="contact-dot"></span> CV / Resume
         </a>
       </div>
@@ -644,7 +676,7 @@
   </section>
 
   <footer>
-    made with care · [your name] · [year]
+    made with care · Bluelight Phoenix · 2026
   </footer>
 
 </div>
