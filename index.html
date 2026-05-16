@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bluelight Phoenix — Game Developer & Digital Artist</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
 <style>
   :root {
     --bg: #030408;
@@ -67,11 +67,11 @@
   }
 
   h1 {
-    font-family: 'Syne', sans-serif;
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 800;
-    line-height: 1.0;
-    letter-spacing: -0.02em;
+    font-family: 'Cinzel Decorative', serif;
+    font-size: clamp(1.9rem, 4.5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.02em;
     color: var(--text);
     opacity: 0;
     animation: fadeUp 0.5s 0.1s ease forwards;
@@ -201,11 +201,21 @@
     overflow: hidden;
   }
 
+  .game-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    position: absolute;
+    inset: 0;
+    padding: 10px;
+  }
+
   .game-thumb::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(125,184,255,0.07), transparent 60%);
+    background: linear-gradient(135deg, rgba(125,184,255,0.06), transparent 60%);
+    pointer-events: none;
   }
 
   .featured-badge {
@@ -423,17 +433,14 @@
     </div>
     <div class="header-links">
       <a href="#" class="link-btn">
-        <!-- Replace # with your GitHub URL -->
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         GitHub
       </a>
-      <a href="#" class="link-btn">
-        <!-- Replace # with your LinkedIn URL -->
+      <a href="https://www.linkedin.com/in/sotiris-beris-63217523b/" class="link-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
         LinkedIn
       </a>
-      <a href="mailto:you@email.com" class="link-btn">
-        <!-- Replace with your real email -->
+      <a href="mailto:sotberis@yahoo.gr" class="link-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
         Email me
       </a>
@@ -449,65 +456,63 @@
 
     <div class="games">
 
-      <!-- FEATURED GAME — fill this in first, it's your strongest work -->
       <a href="https://bluelightphoenix.itch.io/shadows-penance" class="game-card featured">
-        <!-- Replace # with your Itch.io game page URL -->
         <div class="game-thumb">
           <span class="featured-badge">Featured</span>
-          <img src="Shadow Penance cover with titles.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          <!-- To add a screenshot:
-               1. Upload the image to your GitHub repo
-               2. Replace the emoji above with:
-               <img src="screenshot.png" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          -->
+          <img src="Shadow Penance cover with titles.jpg" alt="Shadow's Penance cover">
         </div>
         <div class="game-info">
           <div>
             <p class="game-meta">RPG Maker 2003 · 2016–2026</p>
             <p class="game-title">Shadow's Penance</p>
             <p class="game-desc">
-              My biggest project so far, many years in the making. It's a JRPG with deep focus on the story.
-              It is a 10-15 hour game that was completed in 2025.
+              A story-driven JRPG with a complex narrative, original characters, side quests,
+              and hand-crafted artwork — built and refined over the course of a decade.
             </p>
             <p class="game-highlight">
-              "Started out simplistic but evolved over the years into a much bigger game when compared to the early version.
-              It was uploaded on multiple sites and the feedback I got from people who played it helped me make it better but
-              also become better at RPG design myself. It taught me a lot and I had a lot of fun making it."
+              "My largest project to date. What started as a simple game evolved significantly
+              over the years as I kept improving it based on real player feedback. Releasing it
+              online and hearing from people who played it was one of the most rewarding experiences
+              I've had as a developer — and it made me a much better RPG designer."
             </p>
           </div>
           <div class="game-tags">
             <span class="tag">Playable on Itch</span>
-            <span class="tag">Source on GitHub</span>
             <span class="tag">JRPG</span>
             <span class="tag">Original art</span>
+            <span class="tag">Original story</span>
           </div>
         </div>
       </a>
 
-      <!-- GAME 2 — an older hobby game you're proud of -->
       <a href="#" class="game-card">
-        <div class="game-thumb">🕹️</div>
+        <div class="game-thumb">
+          <img src="mario rpg title.bmp" alt="Mario & Luigi and the Pure Crystals title screen">
+        </div>
         <div class="game-info">
           <div>
-            <p class="game-meta">RPG Maker 2003 · [Year]</p>
-            <p class="game-title">[Game Title]</p>
+            <p class="game-meta">RPG Maker 2003 · 2005–2007</p>
+            <p class="game-title">Mario & Luigi and the Pure Crystals</p>
             <p class="game-desc">
-              [Short description of the game and what makes it interesting.]
-              A passion project made for [friends / a jam / personal enjoyment].
+              A complete Mario fan RPG with an original story — polished enough
+              for anyone to pick up and play from start to finish.
             </p>
             <p class="game-highlight">
-              "Highlight: [a mechanic, a story moment, or a design lesson from this one]."
+              "My very first RPG and first big game — nearly three years in the making.
+              It laid the foundation for everything that came after. Uploading it online
+              and seeing how people responded taught me more about game design
+              than anything else had up to that point."
             </p>
           </div>
           <div class="game-tags">
             <span class="tag">RPG</span>
+            <span class="tag">Fan game</span>
             <span class="tag">Original story</span>
-            <span class="tag">Original art</span>
+            <span class="tag">Complete</span>
           </div>
         </div>
       </a>
 
-      <!-- GAME 3 — another project, or a game jam entry -->
       <a href="#" class="game-card">
         <div class="game-thumb">🌌</div>
         <div class="game-info">
@@ -536,17 +541,6 @@
     </div>
 
     <div class="art-grid">
-      <!--
-        HOW TO ADD YOUR ART:
-        Replace the emoji and gradient background on each cell like this:
-
-        <div class="art-cell wide">
-          <img src="art1.jpg" style="width:100%;height:100%;object-fit:cover;position:absolute;inset:0;">
-          <span class="art-label">Environment concept — Game Name</span>
-        </div>
-
-        Upload your art images to the GitHub repo first, then reference them by filename.
-      -->
       <div class="art-cell wide" style="background: linear-gradient(135deg, #1a1a2e, #16213e);">
         🎨
         <span class="art-label">Environment concept — [Game Name]</span>
@@ -594,8 +588,7 @@
           <span class="skill-item">Character design</span>
           <span class="skill-item">Environment art</span>
           <span class="skill-item">UI graphics</span>
-          <!-- Add your tools: Procreate, Photoshop, Aseprite, Clip Studio, etc. -->
-          <span class="skill-item">[Your art tool]</span>
+          <span class="skill-item">Procreate</span>
         </div>
       </div>
       <div class="skill-group">
@@ -606,13 +599,13 @@
           <span class="skill-item">Narrative design</span>
           <span class="skill-item">Prototyping</span>
           <span class="skill-item">Playtesting</span>
+          <span class="skill-item">Balancing</span>
         </div>
       </div>
       <div class="skill-group">
         <p class="skill-group-name">Strengths</p>
         <div class="skill-list">
           <span class="skill-item">Self-directed</span>
-          <span class="skill-item">Solo shipping</span>
           <span class="skill-item">Fast learner</span>
           <span class="skill-item">Full-stack game dev</span>
         </div>
@@ -631,45 +624,41 @@
       <div class="about-text">
         <p>
           I've been making games as a hobby since high school. I've always been the quiet kid in the
-          back of the class, staring out of the window, lost in my imagination. I've always had a
-          deep love for video games and I wanted to create my own. I started with Game Maker, making
-          small fun games for my friends, then got into RPG Maker. Most of my early work was in
-          RPG Maker 2003, but over the last two years I've been diving deep into Unity and C#.
+          back of the class, staring out of the window, lost in my imagination — and video games were
+          where that imagination lived. I started with Game Maker, making small games for my friends,
+          then fell deep into RPG Maker. Most of my early work was in RPG Maker 2003, but over the
+          last two years I've been diving seriously into Unity and C#.
         </p>
         <p>
-          I've always been an artist and a game designer, but I also got into coding because I want
-          to be able to make anything I can imagine. My background helped me pick up C# quickly,
-          and having both art and code skills means I can prototype and ship a complete game
-          experience without needing a full team.
+          I've always been both an artist and a designer, but I got into coding too because I want
+          to be able to build anything I can imagine. My background helped me pick up C# quickly,
+          and having art and code under one roof means I can take a game from concept to a complete,
+          playable experience entirely on my own.
         </p>
         <p>
-          I'm also a digital artist — I create character designs, environments, and UI graphics,
-          mostly for my own games but also as standalone pieces.
+          Outside of games, I'm a digital artist — I make character designs, environments, and UI
+          graphics, both for my projects and as standalone pieces.
         </p>
         <p>
-          I'm open to game developer roles where I can contribute to a team and keep growing fast.
+          I'm looking for game developer roles where I can contribute to a team, keep growing,
+          and help make something people love to play.
         </p>
       </div>
 
       <div class="contact-list">
-        <a href="mailto:you@email.com" class="contact-link">
-          <!-- Replace with your real email -->
+        <a href="mailto:sotberis@yahoo.gr" class="contact-link">
           <span class="contact-dot"></span> Email
         </a>
         <a href="#" class="contact-link">
-          <!-- Replace # with your GitHub URL -->
           <span class="contact-dot"></span> GitHub
         </a>
-        <a href="#" class="contact-link">
-          <!-- Replace # with your LinkedIn URL -->
+        <a href="https://www.linkedin.com/in/sotiris-beris-63217523b/" class="contact-link">
           <span class="contact-dot"></span> LinkedIn
         </a>
-        <a href="#" class="contact-link">
-          <!-- Replace # with your Itch.io URL -->
+        <a href="https://bluelightphoenix.itch.io" class="contact-link">
           <span class="contact-dot"></span> Itch.io
         </a>
         <a href="#" class="contact-link">
-          <!-- Replace # with a link to your CV PDF, once uploaded to the repo -->
           <span class="contact-dot"></span> CV / Resume
         </a>
       </div>
