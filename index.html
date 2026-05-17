@@ -7,7 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:ital,wght@0,400;0,500;1,400&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #030408;
+    --bg-top: #01050e;
+    --bg-bottom: #08164e;
     --surface: #050a18;
     --surface2: #09112a;
     --border: rgba(80,140,255,0.1);
@@ -15,16 +16,17 @@
     --accent: #7db8ff;
     --accent2: #7b61ff;
     --text: #f7feff;
-    --muted: #b5cff5;
+    --muted: #e3e9ff;
     --tag-bg: rgba(125,184,255,0.08);
-    --tag-color: #7db8ff;
+    --tag-color: #a8d0ff;
     --btn-bg: #060d1c;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   body {
-    background: var(--bg);
+    background: linear-gradient(to bottom, var(--bg-top), var(--bg-bottom));
+    background-attachment: fixed;
     color: var(--text);
     font-family: 'DM Sans', sans-serif;
     font-weight: 300;
@@ -182,11 +184,7 @@
     color: inherit;
   }
 
-  .game-card:hover {
-    border-color: var(--border-hover);
-    transform: translateY(-2px);
-  }
-
+  .game-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
   .game-card.featured { border-color: rgba(125,184,255,0.25); }
   .game-card.featured:hover { border-color: rgba(125,184,255,0.55); }
 
@@ -279,7 +277,7 @@
   .art-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-auto-rows: 200px;  /* base row height */
+    grid-auto-rows: 200px;
     gap: 10px;
   }
 
@@ -321,19 +319,11 @@
   }
 
   .art-cell:hover .art-label { opacity: 1; }
-
-  /* spans 2 columns — landscape images */
   .art-cell.wide { grid-column: span 2; }
-
-  /* spans 2 rows — portrait images */
   .art-cell.tall { grid-row: span 2; }
 
   /* ── SKILLS ── */
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-  }
+  .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
   .skill-group {
     background: var(--surface);
@@ -363,16 +353,9 @@
   }
 
   /* ── ABOUT ── */
-  .about-block {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    gap: 3rem;
-    align-items: start;
-  }
-
+  .about-block { display: grid; grid-template-columns: 1fr auto; gap: 3rem; align-items: start; }
   .about-text { font-size: 15px; color: var(--muted); line-height: 1.8; }
   .about-text p + p { margin-top: 1em; }
-
   .contact-list { display: flex; flex-direction: column; gap: 8px; min-width: 160px; }
 
   .contact-link {
@@ -403,13 +386,11 @@
     letter-spacing: 0.06em;
   }
 
-  /* ── ANIMATIONS ── */
   @keyframes fadeUp {
     from { opacity: 0; transform: translateY(16px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
-  /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
     header { grid-template-columns: 1fr; }
     .header-links { flex-direction: row; flex-wrap: wrap; }
@@ -468,7 +449,6 @@
       <span class="section-label">01</span>
       <h2>Games</h2>
     </div>
-
     <div class="games">
 
       <a href="https://bluelightphoenix.itch.io/shadows-penance" class="game-card featured">
@@ -480,16 +460,8 @@
           <div>
             <p class="game-meta">RPG Maker 2003 · 2016–2026</p>
             <p class="game-title">Shadow's Penance</p>
-            <p class="game-desc">
-              A story-driven JRPG with a complex narrative, original characters, side quests,
-              and hand-crafted artwork — built and refined over the course of a decade.
-            </p>
-            <p class="game-highlight">
-              "My largest project to date. What started as a simple game evolved significantly
-              over the years as I kept improving it based on real player feedback. Releasing it
-              online and hearing from people who played it was one of the most rewarding experiences
-              I've had as a developer — and it made me a much better RPG designer."
-            </p>
+            <p class="game-desc">A story-driven JRPG with a complex narrative, original characters, side quests, and hand-crafted artwork — built and refined over the course of a decade.</p>
+            <p class="game-highlight">"My largest project to date. What started as a simple game evolved significantly over the years as I kept improving it based on real player feedback. Releasing it online and hearing from people who played it was one of the most rewarding experiences I've had as a developer — and it made me a much better RPG designer."</p>
           </div>
           <div class="game-tags">
             <span class="tag">Playable on Itch</span>
@@ -508,16 +480,8 @@
           <div>
             <p class="game-meta">RPG Maker 2003 · 2005–2007</p>
             <p class="game-title">Mario & Luigi and the Pure Crystals</p>
-            <p class="game-desc">
-              A complete Mario fan RPG with an original story — polished enough
-              for anyone to pick up and play from start to finish.
-            </p>
-            <p class="game-highlight">
-              "My very first RPG and first big game — nearly three years in the making.
-              It laid the foundation for everything that came after. Uploading it online
-              and seeing how people responded taught me more about game design
-              than anything else had up to that point."
-            </p>
+            <p class="game-desc">A complete Mario fan RPG with an original story — polished enough for anyone to pick up and play from start to finish.</p>
+            <p class="game-highlight">"My very first RPG and first big game — nearly three years in the making. It laid the foundation for everything that came after. Uploading it online and seeing how people responded taught me more about game design than anything else had up to that point."</p>
           </div>
           <div class="game-tags">
             <span class="tag">RPG</span>
@@ -534,9 +498,7 @@
           <div>
             <p class="game-meta">[Engine] · [Year]</p>
             <p class="game-title">[Game Title]</p>
-            <p class="game-desc">
-              [Short description. Focus on what's unique — mechanic, art style, or story hook.]
-            </p>
+            <p class="game-desc">[Short description. Focus on what's unique — mechanic, art style, or story hook.]</p>
           </div>
           <div class="game-tags">
             <span class="tag">[Genre]</span>
@@ -554,15 +516,6 @@
       <span class="section-label">02</span>
       <h2>Art</h2>
     </div>
-
-    <!--
-      Layout (3-column grid, each row 200px tall):
-
-      [ Isabelle and Lyon — wide ] [ isabelle leaves Rhodya — tall ]
-      [ Edgar Burns ]  [ Isabelle ] [ isabelle leaves Rhodya — tall ]
-      [ I'm sorry ] [ Grey ref ] [ Shadow Penance cover — tall ]
-      [            —            ] [ Shadow Penance cover — tall ]
-    -->
     <div class="art-grid">
 
       <div class="art-cell wide">
@@ -570,7 +523,7 @@
         <span class="art-label">Isabelle and Lyon</span>
       </div>
 
-      <div class="art-cell tall" style="grid-row: span 2;">
+      <div class="art-cell tall">
         <img src="isabelle leaves Rhodya.JPEG" alt="Isabelle leaves Rhodya">
         <span class="art-label">Isabelle leaves Rhodya</span>
       </div>
@@ -595,7 +548,7 @@
         <span class="art-label">Is this a Grey reference??</span>
       </div>
 
-      <div class="art-cell tall" style="grid-row: span 2;">
+      <div class="art-cell tall">
         <img src="Shadow Penance cover.png" alt="Shadow's Penance cover art">
         <span class="art-label">Shadow's Penance — cover art</span>
       </div>
@@ -609,7 +562,6 @@
       <span class="section-label">03</span>
       <h2>Skills</h2>
     </div>
-
     <div class="skills-grid">
       <div class="skill-group">
         <p class="skill-group-name">Code</p>
@@ -658,52 +610,23 @@
       <span class="section-label">04</span>
       <h2>About</h2>
     </div>
-
     <div class="about-block">
       <div class="about-text">
-        <p>
-          I've been making games as a hobby since high school. I've always been the quiet kid in the
-          back of the class, staring out of the window, lost in my imagination — and video games were
-          where that imagination lived. I started with Game Maker, making small games for my friends,
-          then fell deep into RPG Maker. Most of my early work was in RPG Maker 2003, but over the
-          last two years I've been diving seriously into Unity and C#.
-        </p>
-        <p>
-          I've always been both an artist and a designer, but I got into coding too because I want
-          to be able to build anything I can imagine. My academic background helped me pick up C# quickly,
-          and having art and code under one roof means I can take a game from concept to a complete,
-          playable experience entirely on my own.
-        </p>
-        <p>
-          Outside of games, I studied automation at University of West Attica and I'm currently working as an engineer
-          on industrial applications — programming PLCs. Game development and art have been a hobby so far but I would
-          consider game developer roles where I can contribute to a team, keep growing, and help make something people love to play.
-        </p>
+        <p>I've been making games as a hobby since high school. I've always been the quiet kid in the back of the class, staring out of the window, lost in my imagination — and video games were where that imagination lived. I started with Game Maker, making small games for my friends, then fell deep into RPG Maker. Most of my early work was in RPG Maker 2003, but over the last two years I've been diving seriously into Unity and C#.</p>
+        <p>I've always been both an artist and a designer, but I got into coding too because I want to be able to build anything I can imagine. My academic background helped me pick up C# quickly, and having art and code under one roof means I can take a game from concept to a complete, playable experience entirely on my own.</p>
+        <p>Outside of games, I studied automation at University of West Attica and I'm currently working as an engineer on industrial applications — programming PLCs. Game development and art have been a hobby so far but I would consider game developer roles where I can contribute to a team, keep growing, and help make something people love to play.</p>
       </div>
-
       <div class="contact-list">
-        <a href="mailto:sotberis@yahoo.gr" class="contact-link">
-          <span class="contact-dot"></span> Email
-        </a>
-        <a href="#" class="contact-link">
-          <span class="contact-dot"></span> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/sotiris-beris-63217523b/" class="contact-link">
-          <span class="contact-dot"></span> LinkedIn
-        </a>
-        <a href="https://bluelightphoenix.itch.io" class="contact-link">
-          <span class="contact-dot"></span> Itch.io
-        </a>
-        <a href="#" class="contact-link">
-          <span class="contact-dot"></span> CV / Resume
-        </a>
+        <a href="mailto:sotberis@yahoo.gr" class="contact-link"><span class="contact-dot"></span> Email</a>
+        <a href="#" class="contact-link"><span class="contact-dot"></span> GitHub</a>
+        <a href="https://www.linkedin.com/in/sotiris-beris-63217523b/" class="contact-link"><span class="contact-dot"></span> LinkedIn</a>
+        <a href="https://bluelightphoenix.itch.io" class="contact-link"><span class="contact-dot"></span> Itch.io</a>
+        <a href="#" class="contact-link"><span class="contact-dot"></span> CV / Resume</a>
       </div>
     </div>
   </section>
 
-  <footer>
-    made with care · Bluelight Phoenix · 2026
-  </footer>
+  <footer>made with care · Bluelight Phoenix · 2026</footer>
 
 </div>
 
