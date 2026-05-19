@@ -16,9 +16,9 @@
     --accent: #7db8ff;
     --accent2: #7b61ff;
     --text: #f7feff;
-    --muted: #e3e9ff;
+    --muted: #b5cff5;
     --tag-bg: rgba(125,184,255,0.08);
-    --tag-color: #a8d0ff;
+    --tag-color: #7db8ff;
     --btn-bg: #060d1c;
   }
 
@@ -322,6 +322,60 @@
   .art-cell.wide { grid-column: span 2; }
   .art-cell.tall { grid-row: span 2; }
 
+  /* ── VIDEOS ── */
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .video-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.25s, transform 0.25s;
+  }
+
+  .video-card:hover {
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+  }
+
+  .video-embed {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    background: var(--surface2);
+  }
+
+  .video-embed iframe {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+  }
+
+  .video-info {
+    padding: 0.85rem 1rem;
+  }
+
+  .video-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 4px;
+  }
+
+  .video-desc {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+
   /* ── SKILLS ── */
   .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 
@@ -399,6 +453,7 @@
     .art-grid { grid-template-columns: repeat(2, 1fr); }
     .art-cell.wide { grid-column: span 2; }
     .art-cell.tall { grid-row: span 2; }
+    .video-grid { grid-template-columns: 1fr; }
     .skills-grid { grid-template-columns: 1fr; }
     .about-block { grid-template-columns: 1fr; }
   }
@@ -492,21 +547,6 @@
         </div>
       </a>
 
-      <a href="#" class="game-card">
-        <div class="game-thumb">🌌</div>
-        <div class="game-info">
-          <div>
-            <p class="game-meta">[Engine] · [Year]</p>
-            <p class="game-title">[Game Title]</p>
-            <p class="game-desc">[Short description. Focus on what's unique — mechanic, art style, or story hook.]</p>
-          </div>
-          <div class="game-tags">
-            <span class="tag">[Genre]</span>
-            <span class="tag">Solo dev</span>
-          </div>
-        </div>
-      </a>
-
     </div>
   </section>
 
@@ -556,10 +596,51 @@
     </div>
   </section>
 
-  <!-- SKILLS -->
+  <!-- VIDEOS -->
   <section>
     <div class="section-header">
       <span class="section-label">03</span>
+      <h2>Videos</h2>
+    </div>
+    <div class="video-grid">
+
+      <div class="video-card">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/vlFMjmFYnZE"
+            title="Video 1"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-info">
+          <p class="video-title">Shadow's Penance — Grey as a Jojo Character</p>
+          <p class="video-desc">A showcase of a quick drawing I did for Shadow's Penance.</p>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-embed">
+          <iframe
+            src="https://www.youtube.com/embed/4sWjxi2PAAU"
+            title="Unity game showcase"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+        <div class="video-info">
+          <p class="video-title">Unity Game Showcase</p>
+          <p class="video-desc">A showcase of a training project I did a couple of months ago on Unity before starting the current project I'm working on now.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section>
+    <div class="section-header">
+      <span class="section-label">04</span>
       <h2>Skills</h2>
     </div>
     <div class="skills-grid">
@@ -607,7 +688,7 @@
   <!-- ABOUT -->
   <section>
     <div class="section-header">
-      <span class="section-label">04</span>
+      <span class="section-label">05</span>
       <h2>About</h2>
     </div>
     <div class="about-block">
@@ -626,7 +707,7 @@
     </div>
   </section>
 
-  <footer>made with care · Bluelight Phoenix · 2026</footer>
+  <footer>· Bluelight Phoenix · 2026 ·</footer>
 
 </div>
 
